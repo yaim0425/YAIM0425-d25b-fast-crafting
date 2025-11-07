@@ -75,7 +75,7 @@ function This_MOD.reference_values()
     --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 
     --- Entidad de referencia
-    This_MOD.energy_required = 0.002
+    This_MOD.new_value = 0.002
 
     --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 end
@@ -101,7 +101,7 @@ function This_MOD.get_elements()
         --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 
         recipe.energy_required = recipe.energy_required or 0.5
-        if recipe.energy_required <= This_MOD.energy_required then return end
+        if recipe.energy_required <= This_MOD.new_value then return end
 
         --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 
@@ -154,7 +154,7 @@ end
 function This_MOD.update_recipe(space)
     --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 
-    space.recipe.energy_required = This_MOD.energy_required
+    space.recipe.energy_required = This_MOD.new_value
 
     --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 end
