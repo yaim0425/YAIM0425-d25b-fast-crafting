@@ -30,8 +30,8 @@ function This_MOD.start()
         for _, space in pairs(spaces) do
             --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 
-            -- --- Actualizar la entidad
-            -- This_MOD.update_recipe(space)
+            --- Actualizar la entidad
+            This_MOD.update_recipe(space)
 
             --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
         end
