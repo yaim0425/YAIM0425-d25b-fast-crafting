@@ -77,6 +77,13 @@ function This_MOD.reference_values()
     --- Entidad de referencia
     This_MOD.new_value = 0.002
 
+    --- Categorias a ignorar
+    This_MOD.ignore_category = {
+        ["spaceship-ion-engine"] = true,
+        ["spaceship-rocket-engine"] = true,
+        ["spaceship-antimatter-engine"] = true
+    }
+
     --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 end
 
@@ -102,6 +109,7 @@ function This_MOD.get_elements()
 
         recipe.energy_required = recipe.energy_required or 0.5
         if recipe.energy_required <= This_MOD.new_value then return end
+        if This_MOD.ignore_category[recipe.category] then return end
 
         --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 
